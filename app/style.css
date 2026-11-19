@@ -1,0 +1,57 @@
+/* Cover Snap Studio: a dark studio wall around a bright poster. */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  display: flex; gap: 0; background: #14101d; color: #f3eefc;
+  font-family: "Segoe UI", "Liberation Sans", Arial, sans-serif;
+}
+#stage {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 22px; min-width: 0;
+  background: radial-gradient(1200px 700px at 30% 20%, #2b1055 0%, #14101d 60%);
+}
+#preview {
+  max-width: 100%; max-height: calc(100vh - 44px); width: auto; height: auto;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.65); border-radius: 4px; cursor: grab;
+  touch-action: none;
+}
+#preview:active { cursor: grabbing; }
+#controls {
+  width: 322px; flex: none; overflow-y: auto; padding: 20px 20px 28px;
+  background: #1d1830; border-left: 1px solid #352c52;
+}
+#controls h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: 0.5px; }
+#controls h1 span { color: #ffb03a; }
+#controls .sub { margin: 0 0 10px; color: #b9aede; font-size: 13.5px; line-height: 1.45; }
+#controls h2 { margin: 20px 0 8px; font-size: 13px; letter-spacing: 2px; color: #ffb03a; }
+.row { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: #2a2347; color: #e9e4fb; border: 1px solid #453a75; border-radius: 999px;
+  padding: 6px 11px; font-size: 12.5px; cursor: pointer;
+}
+.chip.on { background: #ffb03a; border-color: #ffb03a; color: #241300; font-weight: 700; }
+.chip.panel-chip.active { background: #2be4ff; border-color: #2be4ff; color: #04222a; font-weight: 700; }
+.file-btn, #export {
+  display: block; width: 100%; text-align: center; background: #ff5e62; color: #fff;
+  border: 0; border-radius: 8px; padding: 11px; font-size: 15px; font-weight: 700; cursor: pointer;
+}
+#export { background: #ffb03a; color: #241300; margin-top: 10px; }
+.ghost {
+  width: 100%; margin-top: 8px; background: transparent; color: #cfc6f2;
+  border: 1px solid #453a75; border-radius: 8px; padding: 9px; cursor: pointer; font-size: 13.5px;
+}
+#tray { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.tray-photo { padding: 0; border: 2px solid #453a75; border-radius: 6px; overflow: hidden; cursor: pointer; background: none; }
+.tray-photo img { display: block; width: 62px; height: 62px; object-fit: cover; }
+.hint { color: #9d92c4; font-size: 12.5px; line-height: 1.45; margin: 8px 0 0; }
+.slider { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 13px; color: #cfc6f2; }
+.slider input { flex: 1; accent-color: #ffb03a; }
+#caption {
+  width: 100%; padding: 10px 12px; font-size: 17px; font-weight: 700; letter-spacing: 0.4px;
+  background: #120e20; color: #fff; border: 1px solid #453a75; border-radius: 8px;
+}
+/* Screenshot framings: the cover alone, or the editor mid-work. */
+body.shot-cover #controls { display: none; }
+body.shot-cover #stage { padding: 0; }
+body.shot-cover #preview { max-width: 100vw; max-height: 100vh; box-shadow: none; border-radius: 0; }
+body.shot-editor #stage { padding: 14px; }

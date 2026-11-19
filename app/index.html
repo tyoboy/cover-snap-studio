@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cover Snap Studio — GTA-style cover art from your photos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="stage">
+    <canvas id="preview" width="1080" height="1080"></canvas>
+  </main>
+  <aside id="controls">
+    <h1>Cover Snap <span>Studio</span></h1>
+    <p class="sub">Your photos in, a Vice City poster out. Nothing uploads — it all happens on this machine.</p>
+
+    <h2>1 · Photos</h2>
+    <label class="file-btn">Choose photos<input id="files" type="file" accept="image/*" multiple hidden></label>
+    <button id="samples" class="ghost">Use the bundled samples</button>
+    <div id="tray"></div>
+
+    <h2>2 · Panels</h2>
+    <div id="panels" class="row"></div>
+    <p class="hint">Pick a panel, tap a photo to fill it, drag the cover to position it.</p>
+    <label class="slider">Zoom <input id="zoom" type="range" min="100" max="300" value="100"></label>
+
+    <h2>3 · Look</h2>
+    <div id="layouts" class="row"></div>
+    <div id="grades" class="row"></div>
+
+    <h2>4 · Caption</h2>
+    <input id="caption" type="text" value="Sunset Heist" maxlength="42" autocomplete="off">
+
+    <h2>5 · Export</h2>
+    <div id="sizes" class="row"></div>
+    <button id="export">Download PNG</button>
+  </aside>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
